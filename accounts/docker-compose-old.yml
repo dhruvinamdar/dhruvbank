@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: dhruvbank/accounts
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - dhruvbank-network
+   
+  loans:
+    image: dhruvbank/loans
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - dhruvbank-network
+   
+  cards:
+    image: dhruvbank/cards
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - dhruvbank-network
+   
+networks:
+  dhruvbank-network:
